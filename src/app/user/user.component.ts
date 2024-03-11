@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class UserComponent implements OnInit {
 
-  userData: any;
+  userData: User | null = null;
 
   constructor(
     private route: ActivatedRoute,
@@ -26,7 +26,7 @@ export class UserComponent implements OnInit {
 
   getUser(id: string){
     let url = "https://jsonplaceholder.typicode.com/users/" + id;
-    this.http.get<any>(url).subscribe(
+    this.http.get<User>(url).subscribe(
       res=>{
         this.userData = res;
       }
