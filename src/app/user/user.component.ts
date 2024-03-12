@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class UserComponent implements OnInit {
 
-  userData: User | null = null;
+  userData!: User;
 
   constructor(
     private route: ActivatedRoute,
